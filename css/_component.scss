@@ -1,0 +1,306 @@
+@import 'core';
+
+@mixin flexcenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-cover{
+  display: none;
+  background-color: rgba(0,0,0,.6);
+  position: fixed;
+  top:0; left:0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+}
+
+/* Cards shadow */
+.card-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  /* transition: all 0.3s cubic-bezier(.25,.8,.25,1); */
+}
+
+.card-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.card-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.card-4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card-5 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+  
+  .btn{
+    display: inline-block;
+    font-family: $menufont;
+    font-weight: 700;
+    font-size: .9rem;
+    line-height: 1.6;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    @media (prefers-reduced-motion: reduce) {
+      &{
+        transition: none;
+      }
+    }
+    &:hover{
+      color: #212529;
+      text-decoration: none;
+    }
+    &:focus, &.focus{
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+    }
+    &:disabled, &.disabled{
+      opacity: 0.65;
+    }
+    &.btn-fix{
+      width: 200px;
+      padding: 0.7rem 1rem;
+      border-radius: 1.5rem;
+    }
+    &.btn-primary{
+      color: white;
+      background-color: map-get($map: $bs4, $key: --primary);
+    }
+    &.btn-black{
+      color: white;
+      background-color: black;
+    }
+  }
+  
+$ripple-color: #00E7FF;
+
+.ripple{
+  text-decoration: none;
+  color: #fff;
+  width: 12px;
+  height: 12px;
+  background-color: #00E7FF;
+  margin: 0 auto;
+  border-radius: 100px;
+  animation: ripple .7s linear infinite;
+}
+
+@-webkit-keyframes ripple{
+  0%{
+    box-shadow: 0 0 0 0 rgba($ripple-color, 0.3), 0 0 0 10px rgba($ripple-color, 0.3), 0 0 0 30px rgba($ripple-color, 0.3), 0 0 0 60px rgba($ripple-color, 0.3);
+  }
+  100%{
+    box-shadow: 0 0 0 10px rgba($ripple-color, 0.3), 0 0 0 30px rgba($ripple-color, 0.3), 0 0 0 60px rgba($ripple-color, 0.3), 0 0 0 90px rgba($ripple-color, 0);
+  }
+}
+
+
+@keyframes ripple{
+  0%{
+    box-shadow: 0 0 0 0 rgba($ripple-color, 0.3), 0 0 0 10px rgba($ripple-color, 0.3), 0 0 0 30px rgba($ripple-color, 0.3), 0 0 0 60px rgba($ripple-color, 0.3)
+  }
+
+  100%{
+    box-shadow: 0 0 0 10px rgba($ripple-color, 0.3), 0 0 0 30px rgba($ripple-color, 0.3), 0 0 0 60px rgba($ripple-color, 0.3), 0 0 0 90px rgba($ripple-color, 0);
+  }
+}
+
+.form-group{
+  width: 100%;
+  padding: 10px 0;
+  & > *{
+    display: block;
+    min-height: 24px;
+  }
+  input{
+    padding: 5px 0;
+  }
+  .radio-wrapper{
+    & > *{
+      width: 50%;
+      float: left;
+      display: flex;
+      align-items: center;
+      & > label{
+        letter-spacing: normal !important;
+      }
+    }
+  }
+}
+
+.form-control{
+  width: 100%;
+  border: 0;
+}
+
+input.form-control, textarea.form-control{
+  border: 0;
+  font-family: $menufont;
+  border-bottom: 2px solid #83C5FF;
+  transition: .3s;
+  &:focus{
+    outline: none;
+    border-bottom: 2px solid #0F8BFB;
+  }
+}
+
+select.form-control, textarea.form-control, input[type=date].form-control{
+  border: 1px solid #CCCCCC;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.d-flex{
+  display: flex;
+}
+.justify-content-center{
+  justify-content: center;
+}
+.justify-content-start{
+  justify-content: start;
+}
+.justify-content-end{
+  justify-content: end;
+}
+.align-items-center{
+  align-items: center;
+}
+.align-items-start{
+  align-items: start;
+}
+.align-items-end{
+  align-items: end;
+}
+.flex-row{
+  flex-direction: row;
+}
+.flex-column{
+  flex-direction: column;
+}
+
+.row{
+  display: block;
+}
+
+.alert{
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 10px;
+  color: black;
+  font-size: 1.3rem;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  i{
+    margin-right: 10px;
+  }
+}
+
+.alert.alert-warning{
+  background: #FFD60A;
+}
+.alert.alert-secondary{
+  background: #B2B2B2;
+}
+.alert.alert-info{
+  background: #0A84FF;
+}
+
+$apple-yellow : #FFD60A;
+$apple-green : #2FD159;
+$apple-blue : #007AFF;
+$apple-red : #FF4539;
+
+.soft-alert{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 500;
+  background-color: rgba(0,0,0,.6);
+  @include flexcenter();
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  flex-direction: column;
+  .sf-wrapper{
+    background-color: white;
+    text-align: center;
+    padding: 30px 50px;
+    max-width: 370px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    i{
+      font-size: 100px;
+    }
+    .title{
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .desc{
+      margin-top: 0;
+      color: #6B6B6B;
+      font-size: .95rem;
+    }
+  }
+  &.open{
+    visibility: visible;
+    opacity: 1;
+  }
+  &.soft-alert-info{
+    .sf-wrapper{
+      i, .title{
+        color: $apple-blue;
+      }
+      .close{
+        background-color: $apple-blue;
+        color: white;
+      }
+    }
+  }
+  &.soft-alert-warning{
+    .sf-wrapper{
+      i, .title{
+        color: $apple-yellow;
+      }
+      .close{
+        background-color: $apple-yellow;
+        color: white;
+      }
+    }
+  }
+  &.soft-alert-danger{
+    .sf-wrapper{
+      i, .title{
+        color: $apple-red;
+      }
+      .close{
+        background-color: $apple-red;
+        color: white;
+      }
+    }
+  }
+  &.soft-alert-success{
+    .sf-wrapper{
+      i, .title{
+        color: $apple-green;
+      }
+      .close{
+        background-color: $apple-green;
+        color: white;
+      }
+    }
+  }
+}

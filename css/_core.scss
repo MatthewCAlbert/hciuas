@@ -1,0 +1,101 @@
+@import url('../webfonts/lato/Lato.css');
+
+$colortheme:(
+  dark: #29ABE2,
+  prim: #5DB3FF,
+  light: #83C5FF,
+  darkerb: #349FFF
+);
+
+$bs4: (
+  --blue: #3490dc,
+  --indigo: #6574cd,
+  --purple: #9561e2,
+  --pink: #f66d9b,
+  --red: #e3342f,
+  --orange: #f6993f,
+  --yellow: #ffed4a,
+  --green: #38c172,
+  --teal: #4dc0b5,
+  --cyan: #6cb2eb,
+  --white: #fff,
+  --gray: #6c757d,
+  --gray-dark: #343a40,
+  --primary: #3490dc,
+  --secondary: #6c757d,
+  --success: #38c172,
+  --info: #6cb2eb,
+  --warning: #ffed4a,
+  --danger: #e3342f,
+  --light: #f8f9fa,
+  --dark: #343a40,
+  --xs: 0,
+  --sm: 576px,
+  --md: 768px,
+  --lg: 992px,
+  --xl: 1200px,
+);
+  
+  
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+  &:focus{
+    color: inherit;
+  }
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+h1{
+  font-size: 2em;
+}
+h2{
+  font-size: 1.5em;
+}
+h3{
+  font-size: 1.17em;
+}
+h4{
+  font-size: 1em;
+}
+h5{
+  font-size: .83em;
+}
+
+$menufont : 'Lato';
